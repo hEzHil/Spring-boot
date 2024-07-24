@@ -2,7 +2,7 @@
 # one of them is server
 
 server:
-  port : 3000  # here we are changing the port default 8080 to 3000
+  port : 8080  # here we are changing the port default 8080 to 3000
 
 spring:
   main:

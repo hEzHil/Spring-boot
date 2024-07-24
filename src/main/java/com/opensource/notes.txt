@@ -1,0 +1,57 @@
+@SpringBootApplication
+    ->@SpringBootApplication is @Configuration, @EnableAutoConfiguration and @ComponentScan annotations combined, configured with their default attributes.
+    We add this annotation just once, to the main class of our application
+
+@EnableAutoConfiguration
+
+    ->@EnableAutoConfiguration annotation is even better.
+     It makes Spring guess the configuration based on the JAR files available on the classpath.
+     It can figure out what libraries you use and pre-configure their components without you lifting a finger.
+     It is how all the spring-boot-starter libraries work.
+     Meaning it's a major lifesaver both when you're just starting to work with a library as well as when you know and trust the default config to be reasonable.
+
+@Configuration
+    ->Configuration classes are used to create beans,
+     conventionally called AppConfig, if you want to have a bean dependent on another bean you must define it inside of a configuration class.
+
+@ComponentScan
+    ->Is responsible for telling Spring where to look for components.
+      This annotation is part of @SpringBootApplication which can be found on the main class of any Spring Boot application.
+      By default, Spring will search within the package that the main class is located, along with all of its child packages.
+
+Servlets:
+    -> Its is the proccess which handles the http request .
+
+@RestController
+    -> The @RestController annotation is a convenience syntax for @Controller and @ResponseBody together.
+    This indicates that the class is a controller, and that all the methods in the marked class will return a JSON response.
+
+@Controller
+    -> marks the class as a web controller. A specialisation of the @component annotation,
+    which allows Spring to auto-detect implementation classes/beans by scanning the classpath.
+
+@ResponseBody
+    ->The @ResponseBody is a utility annotation that tells Spring to automatically serialize return value(s) of this classes methods into HTTP responses.
+     When building a JSON endpoint, this is an amazing way to "magically" convert your objects into JSON for easier consumption.
+      If we use the @RestController annotation on our class, we don't need this annotation at all, because @RestController inherits from it.
+
+what is HTTP?
+   Http is hypertext transfer protocol
+   - It is the protocol to fetch the resources such as html documentation
+   - It is the foundation of any data exchange on web and it is a client server      protocol
+   - which means request are initiated by the recipient , usually web browser
+
+what is client?
+   - The user-agent is any tool that acts on behalf of the user. This role is primarily performed by the Web browser,
+     but it may also be performed by programs used by engineers and Web developers to debug their applications.
+
+   - The browser is always the entity initiating the request. It is never the server
+    (though some mechanisms have been added over the years to simulate server-initiated messages).
+
+what is server?
+   - On the opposite side of the communication channel is the server, which serves the document as requested by the client.
+     A server appears as only a single machine virtually; but it may actually be a collection of servers sharing the load (load balancing),
+     or a complex piece of software interrogating other computers (like cache, a DB server, or e-commerce servers), totally or partially generating the document on demand.
+
+   - A server is not necessarily a single machine, but several server software instances can be hosted on the same machine.
+     With HTTP/1.1 and the Host header, they may even share the same IP address.

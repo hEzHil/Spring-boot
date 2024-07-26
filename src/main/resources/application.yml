@@ -1,11 +1,23 @@
 # here we configure various aspects of Springboot application
 # one of them is server
-
 server:
-  port : 3000  # here we are changing the port default 8080 to 3000
+  port: 8080
+  error:
+    include-message: always
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5442/customer
+    username: ezhil
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+
   main:
-    web-application-type: servlet # web-application-type: none
-                                  # this is how to turn off the web server && and default will be servlet
-  #  if u want to del means u can do because default will servlet
+    web-application-type: servlet  # Default is servlet. To turn off the web server, use web-application-type: none

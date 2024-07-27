@@ -26,8 +26,18 @@ public class CustomerJPAService implements CustomerDAO{
     }
 
     @Override
+    public void deleteCustomer(Integer id) {
+        customerRepository.deleteById(id);
+    }
+
+    @Override
     public boolean existPersonWithEmail(String email) {
         return customerRepository.existsCustomerByEmail(email);
+    }
+
+    @Override
+    public boolean existPersonWithId(Integer id) {
+        return customerRepository.existsCustomerById(id);
     }
 
     @Override

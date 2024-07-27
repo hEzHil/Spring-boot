@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-@Repository
+@Repository("list")
 public class CustomerListAccess implements CustomerDAO{
 
     private static final List<Customer> customers;
@@ -38,5 +38,16 @@ public class CustomerListAccess implements CustomerDAO{
                 filter(c -> c.getId().equals(id))
                 .findFirst();
 
+    }
+
+    @Override
+    public boolean existPersonWithEmail(String email) {
+        return  customers.stream()
+                .anyMatch(c -> c.getEmail().equals(email));
+    }
+
+    @Override
+    public void insertCustomer(Customer customer) {
+        customers.add(customer);
     }
 }

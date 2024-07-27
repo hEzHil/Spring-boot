@@ -1,8 +1,15 @@
 package com.opensource;
 
 
+import com.opensource.Customer.Customer;
+import com.opensource.Customer.CustomerRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @SpringBootApplication
@@ -12,6 +19,30 @@ public class Main {
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class ,args);
+    }
+
+    @Bean
+    CommandLineRunner runner(CustomerRepository customerRepository) {
+        return args -> {
+
+            Customer ezhil =  new Customer(
+
+                    "Ezhil",
+                    24,
+                    "ezhilhilarya@gmail.com"
+            );
+
+            Customer ajay =  new Customer(
+
+                    "Ajay",
+                    25,
+                    "ajay@gmail.com"
+            );
+            List<Customer> customer = List.of(ezhil, ajay);
+            customerRepository.saveAll(customer);
+
+        };
+
     }
 
 

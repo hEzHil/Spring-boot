@@ -40,6 +40,8 @@ public class CustomerListAccess implements CustomerDAO{
 
     }
 
+
+
     @Override
     public void deleteCustomer(Integer id) {
         customers.stream().
@@ -62,5 +64,9 @@ public class CustomerListAccess implements CustomerDAO{
     @Override
     public void insertCustomer(Customer customer) {
         customers.add(customer);
+    }
+    @Override
+    public void updateCustomer(Customer update) {
+        customers.add(update);
     }
 }

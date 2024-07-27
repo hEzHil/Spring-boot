@@ -36,6 +36,11 @@ public class CustomerJPAService implements CustomerDAO{
     }
 
     @Override
+    public void updateCustomer(Customer update) {
+        customerRepository.save(update);
+    }
+
+    @Override
     public boolean existPersonWithId(Integer id) {
         return customerRepository.existsCustomerById(id);
     }

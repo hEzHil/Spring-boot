@@ -12,7 +12,7 @@ public class CustomerService {
 
     private final CustomerDAO customerDAO;
 
-    public CustomerService(@Qualifier("jpa") CustomerDAO customerDAO) {
+    public CustomerService(@Qualifier("list") CustomerDAO customerDAO) {
         this.customerDAO = customerDAO;
     }
 
@@ -40,5 +40,14 @@ public class CustomerService {
                         customerRegistrationRequest.age(),
                         customerRegistrationRequest.email())
         );
+    }
+
+    public void deleteCustomerById(Integer id){
+        if(!customerDAO.existPersonWithId(id)){
+            throw  new ResourceNotFound(
+                    "customer with id  [%s] is not found".formatted(id)
+            );
+        }
+        customerDAO.deleteCustomer(id);
     }
 }

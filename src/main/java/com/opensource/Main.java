@@ -36,7 +36,7 @@ public class Main {
 
                     "Ajay",
                     25,
-                    "ajay@gmail.com"
+                    "ajaay@gmail.com"
             );
             List<Customer> customer = List.of(ezhil, ajay);
             customerRepository.saveAll(customer);

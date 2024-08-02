@@ -106,7 +106,5 @@ public class CustomerJDBCService implements CustomerDAO{
             System.out.println("Update customer email " + result);
         }
 
-
-
     }
 }

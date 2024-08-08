@@ -9,7 +9,7 @@ import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
-
+// This class is Unit Testing
 class CustomerJPAServiceTest {
     private CustomerJPAService underTest;
     private AutoCloseable autoCloseable;

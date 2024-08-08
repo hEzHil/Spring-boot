@@ -18,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+// This is unit testing
 @ExtendWith(MockitoExtension.class)
 class CustomerServiceTest {
 

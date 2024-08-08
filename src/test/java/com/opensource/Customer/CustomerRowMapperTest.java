@@ -12,9 +12,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class CustomerRowMapperTest {
-
-
-
+    
     @Test
     void mapRow() throws SQLException {
         // Given

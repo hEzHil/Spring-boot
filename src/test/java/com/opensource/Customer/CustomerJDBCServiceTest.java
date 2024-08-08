@@ -15,6 +15,7 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+// This is Unit testing
 class CustomerJDBCServiceTest extends AbstractTestContainer {
     private CustomerJDBCService underTest;
     private final CustomerRowMapper customerRowMapper = new CustomerRowMapper();

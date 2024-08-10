@@ -82,7 +82,7 @@ class CustomerServiceTest {
         when(customerDAO.existPersonWithEmail(email)).thenReturn(false);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-            email, 22, "ezhil"
+            "ezhil", 22, email
         );
 
         // When
@@ -105,7 +105,7 @@ class CustomerServiceTest {
         String email = "ezhil@gmailc.com";
         when(customerDAO.existPersonWithEmail(email)).thenReturn(true);
         CustomerRegistrationRequest register = new CustomerRegistrationRequest(
-                email,22,"ezhil"
+                "ezhil",22,email
         );
 
         // When

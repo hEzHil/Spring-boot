@@ -1,8 +1,8 @@
 package com.opensource.Customer;
 
 public record CustomerRegistrationRequest(
-        String email,
+        String name,
         Integer age,
-        String name
+        String email
 ) {
 }

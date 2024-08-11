@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -22,6 +21,11 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.*;
 
+// this class is integration test
+// so surefire plugin is used to execute the unit test so we want to set the class name as
+// CustomerIT (Integration Test)
+// or else we want to change in pom.xml file to exclude the integration test class from  the surefire plugin test
+// for that check in the pom.xml file
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class CustomerIntegrationTest {
